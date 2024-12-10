@@ -13,6 +13,8 @@ It then repeatedly executes the following relaxation step:
 We consider the following distribution for the source:
 
 <img width="282" alt="Screenshot 1403-09-20 at 16 16 34" src="https://github.com/user-attachments/assets/c6495b15-533a-4786-94a2-5d826c983dbc">
+
+
 <img width="421" alt="Screenshot 1403-09-20 at 16 19 51" src="https://github.com/user-attachments/assets/8a1a1964-35db-4c28-a1f4-77b9b1e2c766">
 
 We want to design a quantizer for this source. Therefore, our quantizer will consist of \( 2^b \) regions, where \( b \) is the number of bits. Each region has one representative point (\( c_1, c_2, \ldots, c_{2^b} \)), and the boundaries of the regions (\( u_1, u_2, \ldots, u_{2^b-1} \)) satisfy:
