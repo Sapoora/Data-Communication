@@ -17,7 +17,7 @@ We consider the following distribution for the source:
 
 <img width="421" alt="Screenshot 1403-09-20 at 16 19 51" src="https://github.com/user-attachments/assets/8a1a1964-35db-4c28-a1f4-77b9b1e2c766">
 
-We want to design a quantizer for this source. Therefore, our quantizer will consist of \( 2^b \) regions, where \( b \) is the number of bits. Each region has one representative point (\( c_1, c_2, \ldots, c_{2^b} \)), and the boundaries of the regions (\( u_1, u_2, \ldots, u_{2^b-1} \)) satisfy:
+We want to design a quantizer for this source. Therefore, our quantizer will consist of 2^b  regions, where  b  is the number of bits. Each region has one representative point (\( c_1, c_2, \ldots, c_{2^b} \)), and the boundaries of the regions (\( u_1, u_2, \ldots, u_{2^b-1} \)) satisfy:
 
 <img width="239" alt="Screenshot 1403-09-20 at 16 17 37" src="https://github.com/user-attachments/assets/55e0efcb-9387-455d-a7f6-37df7967f5ab">
 
