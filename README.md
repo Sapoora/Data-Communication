@@ -12,15 +12,11 @@ It then repeatedly executes the following relaxation step:
 
 We consider the following distribution for the source:
 
-\[
-f_X(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{x^2}{2 \sigma^2}}
-\]
+<img width="282" alt="Screenshot 1403-09-20 at 16 16 34" src="https://github.com/user-attachments/assets/c6495b15-533a-4786-94a2-5d826c983dbc">
 
 We want to design a quantizer for this source. Therefore, our quantizer will consist of \( 2^b \) regions, where \( b \) is the number of bits. Each region has one representative point (\( c_1, c_2, \ldots, c_{2^b} \)), and the boundaries of the regions (\( u_1, u_2, \ldots, u_{2^b-1} \)) satisfy:
 
-\[
-u_0 = -\infty, \quad u_{2^b} = +\infty
-\]
+<img width="239" alt="Screenshot 1403-09-20 at 16 17 37" src="https://github.com/user-attachments/assets/55e0efcb-9387-455d-a7f6-37df7967f5ab">
 
 The quantizer operates in such a way that for a given value of the source, the region's representative is transmitted instead of the actual value. The objective of this exercise is to design an optimal quantizer for \( b = 2 \). The schematic diagram for \( b = 2 \) is shown below:
 
@@ -29,15 +25,16 @@ The plot illustrates the Gaussian distribution \( f_X(x) \) divided into four re
 
 **Lloyd’s Algorithm:**
 
+
 The Lloyd’s algorithm works as follows:
 1. Generate a large number of samples from the source distribution \( f_X(x) \): \( X_1, X_2, \ldots, X_N \), where \( N \) is large.
 2. Start with arbitrary initial boundaries.
 3. For each region, find the optimal representative \( c_i(\text{new}) \) such that the average squared error in that region is minimized:
-   \[
-   c_i(\text{new}) = \arg \min_{c} \sum_{u_{i-1} < x_k < u_i} (x_k - c)^2
-   \]
-4. Update the boundaries \( u_i \) such that each boundary becomes the midpoint between two consecutive representatives:
-   \[
-   u_i(\text{new}) = \frac{c_i(\text{new}) + c_{i+1}(\text{new})}{2}
-   \]
-5. Repeat steps 3 and 4 until convergence.
+
+   <img width="369" alt="Screenshot 1403-09-20 at 16 18 04" src="https://github.com/user-attachments/assets/2811a042-9e28-4d55-8862-3ef3a5b9a622">
+   
+5. Update the boundaries \( u_i \) such that each boundary becomes the midpoint between two consecutive representatives:
+6. 
+   <img width="327" alt="Screenshot 1403-09-20 at 16 18 24" src="https://github.com/user-attachments/assets/f4ff7344-aed2-41aa-a563-ba56354cf448">
+
+7. Repeat steps 3 and 4 until convergence.
